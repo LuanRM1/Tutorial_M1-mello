@@ -2,8 +2,8 @@ extends Node # instancia a classe Node2D
 
 var status = 1
 var vscore = 0
-var x = 1.5 
-var y = 1.5 
+var x = 3.5   #mudei a velocidade de ir para esquerda e direita
+var y = 3    #mudeei a velocidade para ir pra cime e para baixo
 
 # executa essa função ao carregar o jogo
 func _ready():
@@ -17,12 +17,12 @@ func _process(delta):
 	if status == 1: # jogando
 		
 		# movimenta o cenário do fundo
-		$background.position.x -= 1*x*11         #mudança de velocidade para a percepção mais rapida de game
+		$background.position.x -= 1*x    
 		if ($background.position.x) < -200:
 			$background.position.x = 600
 			
 		# movimenta as colunas para colisão
-		$columns.position.x -= 2*x*3              #mudança de velocidade
+		$columns.position.x -= 2*x           
 		if ($columns.position.x) < -550:
 			$columns.position.x = rand_range(0, 350) - 50
 			$columns.position.y = rand_range(0, 400) - 200
