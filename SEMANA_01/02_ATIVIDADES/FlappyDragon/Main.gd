@@ -2,8 +2,8 @@ extends Node # instancia a classe Node2D
 
 var status = 1
 var vscore = 0
-var x = 3.5   #mudei a velocidade de ir para esquerda e direita
-var y = 3    #mudei a velocidade para ir pra cima para baixo
+var x = 1.5   #mudei a velocidade de ir para esquerda e direita
+var y = 1   #mudei a velocidade para ir pra cima para baixo
 
 # executa essa função ao carregar o jogo
 func _ready():

@@ -1,0 +1,239 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://an_ancient_world_over_the_clouds_by_phyromatical_dbl5xrz.png" type="Texture" id=2]
+[ext_resource path="res://pngegg.png" type="Texture" id=3]
+[ext_resource path="res://menu/408153.png" type="Texture" id=4]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=5]
+[ext_resource path="res://menu/coracao.png" type="Texture" id=6]
+[ext_resource path="res://menu/wooden-stick.png" type="Texture" id=7]
+[ext_resource path="res://menu/pngaaa.com-2621659.png" type="Texture" id=8]
+[ext_resource path="res://dialogo.png" type="Texture" id=9]
+[ext_resource path="res://dentro/BELL.TTF" type="DynamicFontData" id=10]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 615, 0, 123, 294 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 738, 0, 123, 294 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 984, 0, 123, 294 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1107, 0, 123, 294 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 5.5, 15 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 12, 551.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 659, 10.75 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 27.0
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 165.013, 31.7162 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 68.25, 6.5 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 23.5, 20.75 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 15, 12.5 )
+
+[sub_resource type="CircleShape2D" id=15]
+radius = 32.0624
+
+[sub_resource type="CircleShape2D" id=16]
+radius = 28.2312
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 12.5, 16.5 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 18
+use_filter = true
+font_data = ExtResource( 10 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="mapa" type="Sprite" parent="."]
+position = Vector2( 537, 427 )
+texture = ExtResource( 2 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 506, 314 )
+script = ExtResource( 5 )
+
+[node name="personagem" type="AnimatedSprite" parent="KinematicBody2D"]
+position = Vector2( 8, -127 )
+scale = Vector2( 0.288618, 0.288618 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 8.5, -118 )
+shape = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+position = Vector2( 7, -139 )
+current = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="limites2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 23, 182.5 )
+shape = SubResource( 8 )
+
+[node name="baixo2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 665, 658 )
+shape = SubResource( 9 )
+
+[node name="estatua" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 513, 248 )
+shape = SubResource( 7 )
+
+[node name="limites" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1074, 222 )
+shape = SubResource( 8 )
+
+[node name="baixo" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 677, 42 )
+shape = SubResource( 9 )
+
+[node name="esquerda_rio" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 761.514, 477.008 )
+rotation = 1.56673
+shape = SubResource( 10 )
+
+[node name="esquerda_rio2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 59, 200 )
+rotation = 1.56673
+shape = SubResource( 10 )
+
+[node name="esquerda_rio3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 65.7369, 555.034 )
+rotation = 1.56673
+shape = SubResource( 10 )
+
+[node name="pont1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 854, 294 )
+shape = SubResource( 11 )
+
+[node name="pont2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 845, 227 )
+shape = SubResource( 11 )
+
+[node name="wand" type="Area2D" parent="."]
+
+[node name="Wooden-stick" type="Sprite" parent="wand"]
+position = Vector2( 913, 259 )
+scale = Vector2( 0.0756836, 0.0756836 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wand"]
+position = Vector2( 915, 258 )
+shape = SubResource( 13 )
+
+[node name="heart" type="Area2D" parent="."]
+
+[node name="Coracao" type="Sprite" parent="heart"]
+position = Vector2( 400, 629 )
+scale = Vector2( 0.0606689, 0.0606689 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="heart"]
+position = Vector2( 400, 628.5 )
+shape = SubResource( 14 )
+
+[node name="nautilos" type="Area2D" parent="."]
+
+[node name="nautilos" type="Sprite" parent="nautilos"]
+position = Vector2( 968, 441 )
+scale = Vector2( 0.172438, 0.172438 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="nautilos"]
+position = Vector2( 968, 441 )
+shape = SubResource( 15 )
+
+[node name="entrada" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entrada"]
+position = Vector2( 513, 96 )
+shape = SubResource( 16 )
+
+[node name="Area2D_book" type="Area2D" parent="."]
+position = Vector2( -1, -3 )
+
+[node name="book" type="Sprite" parent="Area2D_book"]
+position = Vector2( 201, 79 )
+scale = Vector2( 0.0693359, 0.0693359 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D_book"]
+position = Vector2( 203, 79 )
+shape = SubResource( 12 )
+
+[node name="Dialogo" type="Sprite" parent="."]
+position = Vector2( 509, 161 )
+scale = Vector2( 0.857452, 0.857452 )
+texture = ExtResource( 9 )
+
+[node name="inicio" type="Label" parent="Dialogo"]
+margin_left = -486.0
+margin_top = -161.0
+margin_right = 524.0
+margin_bottom = 211.0
+custom_fonts/font = SubResource( 17 )
+text = "Bem-vindo(a) ao jogo mais emocionante que você já jogou! Aqui, você é um(a) dono(a) de cachorro que está passando por um momento difícil. Seu amado cachorro morreu afogado em um dos rios do mapa e, ao tentar resgatá-lo, você caiu da ilha voadora. Mas não desanime! Você tem uma chance de trazer seu cachorro de volta à vida.
+
+Para isso, você precisa encontrar os 4 itens mágicos espalhados pela ilha. Mas cuidado, a jornada não será fácil! Você terá que enfrentar desafios e perigos para alcançar seu objetivo. E, no final, terá que entrar na estrutura misteriosa que fica no centro da ilha.
+
+Lá dentro, você deverá realizar um ritual poderoso para invocar um dragão lendário que tem o poder de ressuscitar seu cachorro. Mas cuidado, a estrutura está protegida por inimigos ferozes e armadilhas mortais. Sua coragem e habilidade serão postas à prova em cada passo da sua jornada.
+
+Você está pronto(a) para essa aventura emocionante? Lembre-se: cada passo que você dá é uma chance a mais de trazer seu cachorro de volta à vida. Então, levante a cabeça e vá em frente! A estrutura no meio da ilha é o seu destino final, e seu cachorro depende de você."
+autowrap = true
+
+[node name="continuar" type="Button" parent="Dialogo"]
+margin_left = -106.128
+margin_top = 178.436
+margin_right = 98.8717
+margin_bottom = 286.436
+text = "Continuar"
+
+[connection signal="child_entered_tree" from="StaticBody2D/estatua" to="." method="_on_estatua_child_entered_tree"]
+[connection signal="body_entered" from="wand" to="." method="_on_wand_body_entered"]
+[connection signal="body_entered" from="heart" to="." method="_on_heart_body_entered"]
+[connection signal="body_entered" from="nautilos" to="." method="_on_nautilos_body_entered"]
+[connection signal="body_entered" from="entrada" to="." method="_on_entrada_body_entered"]
+[connection signal="body_entered" from="Area2D_book" to="." method="_on_Area2D_book_body_entered"]
+[connection signal="child_entered_tree" from="Area2D_book/CollisionShape2D" to="KinematicBody2D" method="_on_CollisionShape2D_child_entered_tree"]
+[connection signal="pressed" from="Dialogo/continuar" to="." method="_on_continuar_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://menu/pngwing.com.png" type="Texture" id=1]
+[ext_resource path="res://menu/garden_pixel_wallpaper_by_simonesheri1_df0j5oy.jpg" type="Texture" id=2]
+[ext_resource path="res://menu/menu.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="GardenPixelWallpaperBySimonesheri1Df0J5Oy" type="Sprite" parent="."]
+position = Vector2( 513.107, 281.438 )
+scale = Vector2( 0.430285, 0.430285 )
+texture = ExtResource( 2 )
+
+[node name="Pngwingcom" type="TextureButton" parent="."]
+margin_left = 100.0
+margin_top = -1.0
+margin_right = 900.0
+margin_bottom = 599.0
+texture_normal = ExtResource( 1 )
+
+[connection signal="pressed" from="Pngwingcom" to="." method="_on_Pngwingcom_pressed"]
